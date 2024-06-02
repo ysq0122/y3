@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="iconfont.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            height: 48px;
+            padding: 0 10px;
+            border: 1px solid #e0e0e0;
+            border-right: none;
+            outline: none;
+            transition: all .2s;
+            background-color: de;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .search input:hover {
+            border-color: #b0b0b0;
+        }
+
+        .search button {
+            width: 52px;
+            height: 46px;
+            background-color: black;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .content {
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .content.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-container {
+            display: flex;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .content input {
+            width: 70%;
+            height: 48px;
+            padding: 0 10px;
+            border: 1px solid #e0e0e0;
+            outline: none;
+            transition: all .2s;
+            background: none;
+            border: 0px;
+            font-size: 20px;
+        }
+
+        .content button {
+            width: 52px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: none;
+            border: 0px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .hot-list a {
+        display: block;
+        margin-bottom: 10px; 
+        font-size: 18px;
+        text-decoration: none;
+        }
+
+        .hot-list>a{
+            display: block;
+            color: #424242;
+            font-size: 12px;
+            padding: 6px 15px;
+            text-align: left;
+            height: 18px;
+        }
+
+        .hot-list>a:hover{
+            background-color: #e0e0e0;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="search">
+        <button class="iconfont" onclick="toggleSearchResults()">&#xe630;</button>
+    </div>
+    <div class="content" id="searchResults">
+        <div class="input-container">
+            <input type="text" placeholder="我想要搜尋...">
+            <button class="iconfont">&#xe630;</button>
+        </div>
+        <div class="hot-list">
+            <a href="#">全部商品</a>
+            <a href="#">雅詩蘭黛</a>
+            <a href="#">YSL</a>
+            <a href="#">口紅</a>
+            <a href="#">小棕瓶</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleSearchResults() {
+            const searchResults = document.getElementById('searchResults');
+
+            if (searchResults.classList.contains('active')) {
+                searchResults.classList.remove('active');
+            } else {
+                searchResults.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
